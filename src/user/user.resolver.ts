@@ -1,6 +1,6 @@
 import { Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { User } from './schemas/User';
+import { User } from './schemas/user.schema';
 
 @Resolver((of) => User)
 export class UserResolver {
