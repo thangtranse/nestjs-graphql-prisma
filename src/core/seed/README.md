@@ -35,3 +35,8 @@ main()
 ```bash
 yarn seed
 ```
+
+
+# References
+
+https://www.prisma.io/docs/guides/database/seed-database
