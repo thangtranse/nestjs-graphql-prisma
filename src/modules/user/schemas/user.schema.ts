@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Hobby } from 'src/hobby/schemas/hobby.schema';
+import { Hobby } from 'src/modules/hobby/schemas/hobby.schema';
 
 @ObjectType()
 export class User {

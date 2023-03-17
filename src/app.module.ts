@@ -3,10 +3,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { PostModule } from './post/post.module';
-import { PrismaModule } from './prisma/prisma.module';
-import { UserModule } from './user/user.module';
-import { HobbyModule } from './hobby/hobby.module';
+import { PrismaModule } from './core/prisma/prisma.module';
+import { HobbyModule } from './modules/hobby/hobby.module';
+import { PostModule } from './modules/post/post.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [

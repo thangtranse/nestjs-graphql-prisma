@@ -26,3 +26,4 @@ model Hobby {
   user   User?  @relation(references: [id], fields: [userId])
   userId Int?
 }
+
