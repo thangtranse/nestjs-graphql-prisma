@@ -1,12 +1,18 @@
-import { Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { PrismaService } from 'src/prisma/prisma.service';
+import {
+  Mutation,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
+import { PrismaService } from 'src/core/prisma/prisma.service';
 import { User } from './schemas/user.schema';
 
-@Resolver((of) => User)
+@Resolver((_of) => User)
 export class UserResolver {
   constructor(private prisma: PrismaService) {}
 
-  @Query((returns) => [User])
+  @Query((_returns) => [User])
   async users() {
     return this.prisma.user.findMany();
   }
