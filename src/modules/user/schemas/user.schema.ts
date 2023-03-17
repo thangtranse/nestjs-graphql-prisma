@@ -1,25 +1,30 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Role } from '@prisma/client';
 import { Hobby } from 'src/modules/hobby/schemas/hobby.schema';
 
 @ObjectType()
 export class User {
-  @Field((type) => Int)
+  @Field((_type) => Int)
   id: number;
 
-  @Field((type) => Date, { name: 'registeredAt' })
-  createdAt: Date;
-
-  @Field((type) => Date)
-  updatedAt: Date;
-
-  @Field((type) => String)
+  @Field((_type) => String)
   email: string;
 
-  password: string;
-
-  @Field((type) => String, { nullable: true })
+  @Field((_type) => String, { nullable: true })
   name?: string;
 
-  @Field((type) => [Hobby])
+  @Field((_type) => String)
+  hashPassword: string;
+
+  @Field({ defaultValue: Role.USER })
+  role: string[];
+
+  @Field((_type) => [Hobby])
   hobbies: Hobby[];
+
+  @Field((_type) => Date, { name: 'registeredAt' })
+  createdAt: Date;
+
+  @Field((_type) => Date)
+  updatedAt: Date;
 }
