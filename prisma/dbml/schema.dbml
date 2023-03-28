@@ -7,7 +7,7 @@ Table User {
   email String [unique, not null]
   name String
   hashPassword String [not null]
-  role Role [not null, default: 'USER']
+  role UserRole [not null, default: 'USER']
   hobbies Hobby [not null]
   profile Profile
   posts Post [not null]
@@ -45,7 +45,7 @@ Table Category {
   posts Post [not null]
 }
 
-Enum Role {
+Enum UserRole {
   USER
   ADMIN
 }

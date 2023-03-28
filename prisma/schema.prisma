@@ -19,7 +19,7 @@ model User {
   email        String  @unique
   name         String?
   hashPassword String
-  role         Role    @default(USER)
+  role         UserRole    @default(USER)
 
   hobbies Hobby[]
   profile Profile?
@@ -64,7 +64,7 @@ model Category {
 
 // ------
 
-enum Role {
+enum UserRole {
   USER
   ADMIN
 }
